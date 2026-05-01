@@ -226,13 +226,21 @@ else:
     st.info("👈 Use the sidebar to enter scores and see your ranking.")
 
 
-# --- ANALYTICS (GOATCOUNTER) ---
-st.components.v1.html(
+# À mettre tout en bas de ton app.py
+import streamlit.components.v1 as components
+
+components.html(
     """
-    <script data-goatcounter="https://scorecard.goatcounter.com/count"
-            async src="//gc.zgo.at/count.js"></script>
+    <script>
+        window.parent.document.addEventListener('DOMContentLoaded', function() {
+            var script = document.createElement('script');
+            script.dataset.goatcounter = 'https://scorecard.goatcounter.com/count';
+            script.async = true;
+            script.src = '//gc.zgo.at/count.js';
+            window.parent.document.head.appendChild(script);
+        });
+    </script>
     """,
     height=0,
-    width=0,
 )
 
