@@ -224,3 +224,15 @@ if user_scores:
         st.plotly_chart(fig_bar, use_container_width=True)
 else:
     st.info("👈 Use the sidebar to enter scores and see your ranking.")
+
+
+# --- ANALYTICS (GOATCOUNTER) ---
+st.components.v1.html(
+    """
+    <script data-goatcounter="https://scorecard.goatcounter.com/count"
+            async src="//gc.zgo.at/count.js"></script>
+    """,
+    height=0,
+    width=0,
+)
+
